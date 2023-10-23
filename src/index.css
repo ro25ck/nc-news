@@ -61,9 +61,37 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #525253;
   }
   button {
     background-color: #f9f9f9;
   }
+}
+
+.nav {
+  background-color: rgb(247, 211, 211);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  padding-left: .5rem;
+}
+
+.main-articleListInfo img {
+  height: 50%;
+  width: 50%;
 }
