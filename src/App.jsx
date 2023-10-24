@@ -19,7 +19,7 @@ function App() {
             <Route path='/topics' element={<Topics />} />
             <Route path='/comments' element={<Comments />} />
             <Route path='/users' element={<Users />} />
-            <Route path='/articles/2' element={<SingleArticle />}></Route>
+            <Route path='/articles/:article_id' element={<SingleArticle />}></Route>
         </Routes>
     </main>
    </>)
