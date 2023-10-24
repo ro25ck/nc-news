@@ -6,6 +6,7 @@ import Articles from './components/Articles'
 import Comments from './components/Comments'
 import Users from './components/Users'
 import { Route, Routes } from 'react-router-dom'
+import SingleArticle from './components/SingleArticle'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path='/topics' element={<Topics />} />
             <Route path='/comments' element={<Comments />} />
             <Route path='/users' element={<Users />} />
+            <Route path='/articles/2' element={<SingleArticle />}></Route>
         </Routes>
     </main>
    </>)

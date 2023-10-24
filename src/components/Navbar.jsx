@@ -8,6 +8,7 @@ function Navbar () {
             </Link>
             <ul>
                 <li>
+                    <Link to="/articles/2"> Art_id 2</Link>
                     <Link to="/articles"> Articles</Link>
                     <Link to="/topics">Topics</Link>
                     <Link to="/comments"> Comments</Link>
