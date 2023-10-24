@@ -91,7 +91,17 @@ button:focus-visible {
   padding-left: .5rem;
 }
 
-.main-articleListInfo img {
-  height: 50%;
-  width: 50%;
+.articleCard {
+  border: solid black 1px;
+  border-radius: 3px;
+  box-shadow: #52525342 5px 3px 0px 0px;
+  margin: 15px;
+  max-width:max-content;
+}
+
+
+.articleCard img {
+  height: 30%;
+  width: 30%;
+  border-radius: 5px 5px 0 0;
 }
