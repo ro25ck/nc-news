@@ -22,12 +22,11 @@ export default function SingleArticleComments({article_id}) {
   if (isLoading) return <p>Loading...</p>
 
   return (
-    <div>
-        <a id="article_comments"></a>
-        <h4>Comments: {data.length}</h4> 
-        <p><CommentShowCard data={data}/></p>
-        <button >add comment</button>
-
-    </div>
+    <section id="ArticleCommentsAll">
+      <div>
+        <b>Comments: {data.length}</b> <button >add a comment</button>
+      </div>
+        <CommentShowCard data={data}/>
+    </section>
   )
 }

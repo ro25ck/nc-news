@@ -33,7 +33,7 @@ export default function SingleArticle() {
     <div className='SingleArticleHeader'>
         <p>{data.topic}</p>
         <h4>{data.title}</h4>
-        <p>By <a href='#'>{data.author}</a> | Posted: {data.created_at.substring(0,10)} | Votes: {data.votes}</p>
+        <p>By <b>{data.author}</b> | Posted: {data.created_at.substring(0,10)} | Votes: {data.votes}</p>
     </div>
     <div id="ArticleBody" className='SingleArticleBody'>
         <p>{data.body}</p>
