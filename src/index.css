@@ -92,16 +92,93 @@ button:focus-visible {
 }
 
 .articleCard {
-  border: solid black 1px;
+  /* border: solid black 1px;
   border-radius: 3px;
   box-shadow: #52525342 5px 3px 0px 0px;
   margin: 15px;
-  max-width:max-content;
+  max-width:max-content; */
+
+  background: white;
+  --padding: 1rem;
+  /* border: 1px solid #777; */
+  border: none;
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+  overflow: hidden;
 }
 
+.articleList-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  align-items: flex-start;
+}
 
-.articleCard img {
+.articleCard-header {
+  font-size: 1rem;
+  padding: var(--padding);
+  padding-bottom: 0;
+  margin-bottom: .5rem;
+}
+
+.articleCard-header-img {
+  padding: 0;
+  overflow: hidden;
+  height: 180px;
+}
+
+.articleCard-header-img > img {
+  display: block;
+  width: 100%;
+  /* max-height: 200px; */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+.articleCard-body {
+  font-size: .9rem;
+  padding: 0 var(--padding)
+}
+
+.articleCard-footer {
+  margin-top: 1rem;
+  padding: var(--padding);
+  padding-top: 0;
+}
+
+/* .articleCard img {
   height: 30%;
   width: 30%;
   border-radius: 5px 5px 0 0;
+} */
+
+.SingleArticleHeader {
+  border-bottom: solid #525253 1px;
+  text-align: left;
+  max-width: 60%;
 }
+
+.SingleArticleBody {
+  text-align: left;
+}
+
+.SingleArticleComments {
+  text-align: left;
+}
+
+.SingleArticleComments p {
+  margin: none;
+  font-size: small;
+  border-radius: 4px;
+  background-color: antiquewhite;
+  padding-top: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 1px;
+}
+
+.SingleArticleComments button {
+  font-size: small;
+}
+

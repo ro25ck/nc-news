@@ -10,7 +10,12 @@ export const getArticles = () => {
         .then((response) => {
             return response.data.articles
         })
-        .catch((error)=>{
-            console.log(error)
-        })
+}
+
+export const getArticleById = (article_id) => {
+    return articleAPI
+        .get(`/articles/${article_id}`)
+        .then((response) => {
+            return response.data.article
+        })  
 }

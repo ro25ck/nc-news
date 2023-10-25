@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { getArticles } from '../api'
+import ArticleShowCard from './ArticleShowCard'
+
 
 function Articles() {
     const [isLoading, setIsLoading] = useState(true)
@@ -19,40 +21,19 @@ function Articles() {
     
     if (isLoading) return <p>Loading...</p>
 
-    const articleListInfo = data.map((article)=> {
-        const {article_id, title, author, created_at, topic, article_img_url, votes, comment_count} = article
-
 /* next iteration of page 
-   Image, Title, Comments links will navigate to SingleAritcle component with article id in url
    Category link will re-render current Articles component with filtered list of articles in queried category
    Author link will re-render current Articles component with filtered list of articles in queried author
 
 */
 
-        return (
-            <section className="articleCard" key={article_id}>
-            <div>
-            <a href='#'><img src={article_img_url} alt={title} ></img></a>
-            </div>
-            <div>
-            <p>Title: <a href="#">{title}</a></p>
-            <p>Author: <a href="#">{author}</a></p>
-            <p>Category: <a href="#">{topic}</a></p>
-            <p>Posted: {created_at.substring(0,10)}</p>
-            <p>Votes: {votes}</p>
-            <p>Comment: <a href='#'>{comment_count}</a></p>
-            </div>
-            </section>
-        )
-    })
-
     return (
         <>
         <section className="main-articleList">
-            <p>Here is the list all the articles on the site</p>
-                <section id="articleList">
-                {articleListInfo}
-                </section>
+            <p>Here is the list all of the articles on the site</p>
+                <div id="articleList">
+                <ArticleShowCard data={data}/>
+                </div>
         </section>
     </>
   )
