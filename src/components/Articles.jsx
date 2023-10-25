@@ -31,9 +31,9 @@ function Articles() {
         <>
         <section className="main-articleList">
             <p>Here is the list all of the articles on the site</p>
-                <section id="articleList">
+                <div id="articleList">
                 <ArticleShowCard data={data}/>
-                </section>
+                </div>
         </section>
     </>
   )

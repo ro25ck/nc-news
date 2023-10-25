@@ -8,24 +8,23 @@ function ArticleShowCard({data}) {
         const hrefArticleComments = hrefArticle + "#article_comments"
 
         return (<section className="articleCard" key={article_id}>
-        <div>
+        <div className='articleCard-header-img'>
         <a href={hrefArticle}><img src={article_img_url} alt={title} ></img></a>
         </div>
-        <div>
-        <p>Title: <a href={hrefArticle}>{title}</a></p>
-        <p>Author: <a href="#">{author}</a></p>
+        <div className='articleCard-header'><a href={hrefArticle}>{title}</a></div>
+        <div className='articleCard-body'>
+        <p>Author: <a href="#">{author}</a> | Posted: {created_at.substring(0,10)} </p>
+        <p>Votes: {votes} | Comments: <a href={hrefArticleComments}>{comment_count}</a></p>
         <p>Category: <a href="#">{topic}</a></p>
-        <p>Posted: {created_at.substring(0,10)}</p>
-        <p>Votes: {votes}</p>
-        <p>Comment: <a href={hrefArticleComments}>{comment_count}</a></p>
         </div>
+        <div className='articleCard-footer'></div>
         </section>
         )
     })
 
 
   return (
-    <div>{articleListInfo}</div>
+    <div className='articleList-grid'>{articleListInfo}</div>
   )
 }
 
