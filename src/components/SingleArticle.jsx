@@ -3,13 +3,14 @@ import { useState, useEffect } from 'react'
 import { getArticleById } from '../api'
 import { useParams } from 'react-router'
 import SingleArticleComments from './SingleArticleComments'
+import Votes from './Votes'
 
 const imgStyle = { 
     maxWidth: "70%",
     }
 
 
-export default function SingleArticle() {
+function SingleArticle() {
     const [isLoading, setIsLoading] = useState(true)
     const [data, setData] = useState([])
     const { article_id } = useParams()
@@ -33,7 +34,7 @@ export default function SingleArticle() {
     <div className='SingleArticleHeader'>
         <p>{data.topic}</p>
         <h4>{data.title}</h4>
-        <p>By <b>{data.author}</b> | Posted: {data.created_at.substring(0,10)} | Votes: {data.votes}</p>
+        <p>By <b>{data.author}</b> | Posted: {data.created_at.substring(0,10)} | <Votes /></p>
     </div>
     <div id="ArticleBody" className='SingleArticleBody'>
         <p>{data.body}</p>
@@ -44,3 +45,5 @@ export default function SingleArticle() {
     </>
   )
 }
+
+export default SingleArticle

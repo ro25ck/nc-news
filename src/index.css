@@ -188,3 +188,7 @@ button:focus-visible {
   padding-top: 0;
   border-radius: 4px;
 }
+
+.list-topic {
+  text-align: left;
+}

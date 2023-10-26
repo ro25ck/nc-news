@@ -6,10 +6,10 @@ const articleAPI = axios.create({
 
 export const getArticles = () => {
     return articleAPI
-        .get("/articles")
-        .then((response) => {
+    .get("/articles")
+    .then((response) => {
             return response.data.articles
-        })
+    })
 }
 
 export const getArticleById = (article_id) => {
@@ -24,6 +24,14 @@ export const getCommentsByArticleId = (article_id) => {
     return articleAPI
         .get(`/articles/${article_id}/comments`)
         .then((response) => {
+            return response.data
+        })
+}
+
+export const getTopics = () => {
+    return articleAPI
+        .get("/topics")
+        .then((response)=> {
             return response.data
         })
 }

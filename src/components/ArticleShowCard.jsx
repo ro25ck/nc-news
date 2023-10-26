@@ -5,7 +5,7 @@ function ArticleShowCard({data}) {
     const articleListInfo = data.map((article)=> {
         const {article_id, title, author, created_at, topic, article_img_url, votes, comment_count} = article
         const hrefArticle = "/articles/" + article_id
-        const hrefArticleComments = hrefArticle + "#article_comments"
+        // const hrefArticleComments = hrefArticle + "#article_comments"
 
         return (<section className="articleCard" key={article_id}>
         <div className='articleCard-header-img'>
@@ -14,7 +14,7 @@ function ArticleShowCard({data}) {
         <div className='articleCard-header'><a href={hrefArticle}>{title}</a></div>
         <div className='articleCard-body'>
         <p>Author: <a href="#">{author}</a> | Posted: {created_at.substring(0,10)} </p>
-        <p>Votes: {votes} | Comments: <a href={hrefArticleComments}>{comment_count}</a></p>
+        <p>Votes: {votes} | Comments: <a href={hrefArticle}>{comment_count}</a></p>
         <p>Category: <a href="#">{topic}</a></p>
         </div>
         <div className='articleCard-footer'></div>
