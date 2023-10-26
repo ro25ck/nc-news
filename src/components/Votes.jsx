@@ -1,8 +1,9 @@
 import React from 'react'
 
-function Votes() {
+function Votes({data}) {
+
   return (<>
-    Votes: 'widget here'
+    Votes: {data.votes}
     </>
   )
 }
