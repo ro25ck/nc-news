@@ -38,5 +38,5 @@ export const getTopics = () => {
 
 export const updateVotes = (article_id, value) => {
     return articleAPI
-        .patch(`article/${article_id}`, {inc_votes: value})
+        .patch(`articles/${article_id}`, {inc_votes: value})
 }
