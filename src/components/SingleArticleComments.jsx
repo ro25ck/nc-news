@@ -9,13 +9,14 @@ export default function SingleArticleComments({article_id}) {
   const [isLoading, setIsLoading] = useState(true)
   const [data, setData] = useState([])
   const [showCommentInput, setShowCommentInput] = useState(false)
- 
+  const [comments, setComments] = useState(data)
   
   useEffect(()=>{
     getCommentsByArticleId(article_id)
     .then((fetchedComments)=>{
       setData(fetchedComments)
       setIsLoading(false)
+      setComments(data)
     })
     .catch((error)=> {
       console.log(error.response)
@@ -32,7 +33,7 @@ export default function SingleArticleComments({article_id}) {
         {showCommentInput ? (<button onClick={()=>setShowCommentInput(false)}>discard draft</button>) : null}
       </div>
         {showCommentInput ? <CommentInput /> : null}
-        <CommentShowCard data={data}/>
+        <CommentShowCard comments={comments}/>
     </section>
   )
 }

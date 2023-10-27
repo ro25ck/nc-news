@@ -1,8 +1,9 @@
 import React from 'react'
 
-export default function CommentShowCard({data}) {
 
-    const commentFormatted = data.map((comment)=>{
+export default function CommentShowCard({comments}) {
+
+    const commentFormatted = comments.map((comment)=>{
 
         const {comment_id, author, created_at, votes, body } = comment
         return (

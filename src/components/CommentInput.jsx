@@ -4,12 +4,21 @@ import {useState} from 'react'
 
  function CommentInput(onSubmit) {
     const [message, setMessage] = useState("")
+    const [newComment, setNewComment] = useState("")
     const [isValidMessage, setIsValidMessage] = useState("")
 
     function actionSubmit(e) {
         e.preventDefault()
-        if(message.length === 0)
-        onSubmit(message).then(()=> setMessage(""))
+        if(message.length !== 0)
+        onSubmit(message)
+          .then(()=> { 
+            setMessage("") //clear input boxk
+            setIsValidMessage(true)}) //validation check
+            
+        .catch(()=>{
+            setIsValidMessage(false)
+            setMessage(message)
+        })
     }
 
 
@@ -23,7 +32,6 @@ import {useState} from 'react'
             />
             <button type="submit">Post</button>
         </div>
-
     </form>
   )
 }
