@@ -22,7 +22,7 @@ import { getTopics } from '../api'
     const queryTopicHref = "/articles?topic="+topic.slug
     return (
       <div key={topic.slug}>
-        <p>{topic.slug} -> {topic.description}</p>
+        <p><a href={queryTopicHref}>{topic.slug}</a>: {topic.description}</p>
       </div>
     )
   })
