@@ -28,8 +28,6 @@ function Articles() {
     ? data.filter(article => article.topic === queryCategory)
     : data
 
-    console.log(filteredCategoryData, "filtered data")
-
 /* next iteration of page 
    Author link will re-render current Articles component with filtered list of articles in queried author
 */
