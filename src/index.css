@@ -194,3 +194,10 @@ button:focus-visible {
 .list-topic {
   text-align: left;
 }
+
+.inputComment {
+  flex-grow: 1;
+  resize: none;
+  border-radius: .5em;
+  padding: .5em;
+}

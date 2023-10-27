@@ -40,3 +40,8 @@ export const updateVotes = (article_id, value) => {
     return articleAPI
         .patch(`articles/${article_id}`, {inc_votes: value})
 }
+
+export const postComment = (article_id, message) => {
+    return articleAPI
+        .post(`articles/${article_id}/comments`,{username: "rogersop", body: {message}})
+}

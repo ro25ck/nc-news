@@ -29,7 +29,6 @@ export default function SingleArticleComments({article_id}) {
       <div>
         <b>Comments: {data.length}</b> 
         {showCommentInput ? null : (<button onClick={()=>setShowCommentInput(true)}>add a comment</button>)}
-        {showCommentInput ? (<button>post comment</button>) : null}
         {showCommentInput ? (<button onClick={()=>setShowCommentInput(false)}>discard draft</button>) : null}
       </div>
         {showCommentInput ? <CommentInput /> : null}
