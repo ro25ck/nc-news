@@ -1,0 +1,44 @@
+.article__content {
+    text-align: left;
+    margin-top: 4em;
+}
+
+.article__content-header {
+    margin-top: 1.2em;
+    margin-bottom: 1.3em;
+    line-height: 2.5em;
+}
+
+.article__content-category {
+    font-size: 0.7em;
+    text-transform: uppercase;
+}
+
+.article__content-title {
+    font-size: 1.7em;
+}
+
+.article__content-credit {
+    margin-top: .7em;
+}
+
+.article__content img {
+    max-width: 70%;
+    margin-bottom: 2.6em;
+}
+
+.article__content-body {
+    max-width: 70%;
+    margin-left: 1.1em;
+    margin-bottom: 1.5em;
+    font-size: 1.2em;
+}
+
+.article__content-comments {
+    max-width: 70%;
+    margin-left: 1.1em;
+}
+
+.container__allComments-header {
+    font-size: 1.2em;
+}

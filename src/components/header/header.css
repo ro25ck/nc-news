@@ -1,0 +1,38 @@
+.header {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #b3ccff;
+}
+
+.header__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    position: relative;
+}
+
+.header__logo {
+    position: relative;
+    white-soace: nowrap;
+    width: 60%;
+}
+
+.header__logo a {
+    font-size: 3.5em;
+    color: #003399;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    bottom: -1.25em;
+    left: -0.55em;
+}

@@ -9,9 +9,9 @@ function Navbar () {
             <ul>
                 <li>
                     <Link to="/articles"> Articles</Link>
-                    <Link to="/topics">Topics</Link>
-                    <Link to="/comments"> Comments</Link>
-                    <Link to="/users"> Users</Link>
+                    {/* <Link to="/topics">Topics</Link>
+                    <Link to="/comments"> Comments</Link> */}
+                    <Link to="/user"> Profile</Link>
                 </li>
             </ul>
         </nav>
