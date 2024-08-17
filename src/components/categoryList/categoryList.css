@@ -1,0 +1,18 @@
+.category__list {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8em;
+}
+
+.category__list-item {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 0.1em 0.5em;
+    border-radius:2em;
+    border: 1px solid #ccc;
+}
+
+.category__list-item:hover {
+    background: #ccc;
+}

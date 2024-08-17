@@ -23,8 +23,8 @@
 
 .header__logo {
     position: relative;
-    white-soace: nowrap;
-    width: 60%;
+    white-space: nowrap;
+    /* width: 60%; */
 }
 
 .header__logo a {
