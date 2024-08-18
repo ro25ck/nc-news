@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./home.css";
 import CategoryList from "../categoryList/CategoryList";
 import { getArticles } from "../../api";
+import ShortList from "../articleCards/ShortList";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +26,12 @@ function Home() {
   const article3 = data[2];
   const article4 = data[3];
   const article5 = data[4];
+  const article6 = data[5];
+
+  const articleTopic1 = data.filter(article => article.topic && article.topic === "coding" )
+  const articleTopic2 = data.filter(article => article.topic === "football" )
+  const articleTopic3 = data.filter(article => article.topic === "cooking" )
+
 
   return (
     <>
@@ -48,38 +55,49 @@ function Home() {
         <div className="container__articlesFeatured-secondary">
           <article className='container__articlesFeatured-secondary-article'>
             <div className='container__articlesFeatured-secondary-article2-text'>
-            {article2.topic}
+            <div className="article__topic">{article2.topic}</div>
             <h2>{article2.title}</h2>
             </div>
             <div className='container__articlesFeatured-secondary-article2-image'><img src={article2.article_img_url}></img></div>
           </article>
           <article className='container__articlesFeatured-secondary-article'>
             <div className='container__articlesFeatured-secondary-article2-text'>
-            {article3.topic}
+            <div className="article__topic">{article3.topic}</div>
             <h2>{article3.title}</h2>
             </div>
             <div className='container__articlesFeatured-secondary-article2-image'><img src={article3.article_img_url}></img></div>
           </article>
           <article className='container__articlesFeatured-tertiary-article'>
             <div className='container__articlesFeatured-tertiary-article3-text'>
-            {article3.topic}
-            <h2>{article3.title}</h2>
-            </div>
-          </article>
-          <article className='container__articlesFeatured-tertiary-article'>
-            <div className='container__articlesFeatured-tertiary-article3-text'>
-            {article4.topic}
+            <div className="article__topic">{article4.topic}</div>
             <h2>{article4.title}</h2>
             </div>
           </article>
           <article className='container__articlesFeatured-tertiary-article'>
             <div className='container__articlesFeatured-tertiary-article3-text'>
-            {article5.topic}
+            <div className="article__topic">{article5.topic}</div>
             <h2>{article5.title}</h2>
+            </div>
+          </article>
+          <article className='container__articlesFeatured-tertiary-article'>
+            <div className='container__articlesFeatured-tertiary-article3-text'>
+            <div className="article__topic">{article6.topic}</div>
+            <h2>{article6.title}</h2>
             </div>
           </article>
         </div>
       </section>
+      <section className="container__shortListByTopic">
+        <ShortList data={articleTopic1}/>
+      </section>
+      <section className="container__shortListByTopic">
+        <ShortList />
+      </section>
+      <section className="container__shortListByTopic">
+        <ShortList />
+      </section>
+
+
 
     </>
   );
