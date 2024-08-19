@@ -93,9 +93,11 @@ function ArticlesByTopic() {
   const dataArticlesFilterByTopic = articleData.filter(article=> article.topic === topic)
 
   const formatArticlesToDisplay = dataArticlesFilterByTopic.map((article)=> {
+    const hrefArticle = "/articles/" + article.article_id
+
    return(
    <article className="container__topic-article" key={article.article_id}>
-    <a>
+    <a href={hrefArticle}>
     <div className="topic-article__text">
       <h2>{article.title}</h2>
       <div className="article__author">By {article.author}</div>
