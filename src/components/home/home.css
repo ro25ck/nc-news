@@ -6,6 +6,7 @@
 .container__articlesFeatured {
     display: flex;
     gap: 2em;
+    margin-bottom: 7em;
 }
 
 .container__articlesFeatured h1:hover, h2:hover {
@@ -64,9 +65,13 @@
     flex-direction: column;
 }
 
-.article__topic{
+.article__topic, .article__topic2 {
     text-transform: uppercase;
     font-size: 0.75em;
+}
+
+.article__topic2 {
+    font-weight: 700;
 }
 
 .container__articlesFeatured-secondary h2 {
@@ -104,20 +109,11 @@
 .container__articlesFeatured-tertiary-article h2 {
     margin-top: 0.4em;
     font-size: 1.1em;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.2;
 }
 
 .container__shortListByTopic {
-    margin-top: 10em;
+    /* margin-top: 10em; */
 }
 
-.container__shortListByTopic:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    bottom: -0.6em;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #ccc;
-}

@@ -3,6 +3,7 @@ import "./home.css";
 import CategoryList from "../categoryList/CategoryList";
 import { getArticles } from "../../api";
 import ShortList from "../articleCards/ShortList";
+import ArticlesByTopicShort from "../articles/ArticlesByTopicShort";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,10 +29,18 @@ function Home() {
   const article5 = data[4];
   const article6 = data[5];
 
-  const articleTopic1 = data.filter(article => article.topic && article.topic === "coding" )
-  const articleTopic2 = data.filter(article => article.topic === "football" )
-  const articleTopic3 = data.filter(article => article.topic === "cooking" )
-
+  const articleTopic1 = 
+    data
+    .filter(article => article.topic && article.topic === "coding" )
+    .slice(0 ,5)
+  const articleTopic2 = 
+    data
+    .filter(article => article.topic && article.topic === "football" )
+    .slice(0,5)
+  const articleTopic3 = 
+    data
+    .filter(article => article.topic && article.topic === "cooking" )
+    .slice(0,5)
 
   return (
     <>
@@ -69,32 +78,32 @@ function Home() {
           </article>
           <article className='container__articlesFeatured-tertiary-article'>
             <div className='container__articlesFeatured-tertiary-article3-text'>
-            <div className="article__topic">{article4.topic}</div>
+            <div className="article__topic2">{article4.topic}</div>
             <h2>{article4.title}</h2>
             </div>
           </article>
           <article className='container__articlesFeatured-tertiary-article'>
             <div className='container__articlesFeatured-tertiary-article3-text'>
-            <div className="article__topic">{article5.topic}</div>
+            <div className="article__topic2">{article5.topic}</div>
             <h2>{article5.title}</h2>
             </div>
           </article>
           <article className='container__articlesFeatured-tertiary-article'>
             <div className='container__articlesFeatured-tertiary-article3-text'>
-            <div className="article__topic">{article6.topic}</div>
+            <div className="article__topic2">{article6.topic}</div>
             <h2>{article6.title}</h2>
             </div>
           </article>
         </div>
       </section>
       <section className="container__shortListByTopic">
-        <ShortList data={articleTopic1}/>
+        <ArticlesByTopicShort data={articleTopic1}/>
       </section>
       <section className="container__shortListByTopic">
-        <ShortList />
+      <ArticlesByTopicShort data={articleTopic2}/>
       </section>
       <section className="container__shortListByTopic">
-        <ShortList />
+      <ArticlesByTopicShort data={articleTopic3}/>
       </section>
 
 
