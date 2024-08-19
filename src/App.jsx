@@ -8,7 +8,7 @@ import Profile from './components/Profile'
 import { Route, Routes } from 'react-router-dom'
 import SingleArticle from './components/singleArticle/SingleArticle.jsx'
 import Header from './components/header/Header.jsx'
-
+import ArticlesByTopic from './components/articles/ArticlesByTopic.jsx'
 
 function App() {
    return (<> 
@@ -18,6 +18,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/articles' element={<Articles />} />
             <Route path='/topics' element={<Topics />} />
+            <Route path=':topic' element={<ArticlesByTopic />}/>
             <Route path='/comments' element={<Comments />} />
             <Route path='/users' element={<Profile />} />
             <Route path='/articles/:article_id' element={<SingleArticle />}></Route>

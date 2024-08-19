@@ -16,3 +16,7 @@
 .category__list-item:hover {
     background: #ccc;
 }
+
+.category__list-item a:visited, a:link {
+    color: inherit;
+}

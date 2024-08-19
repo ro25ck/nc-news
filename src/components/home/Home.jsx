@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./home.css";
-import CategoryList from "../categoryList/CategoryList";
 import { getArticles } from "../../api";
-import ShortList from "../articleCards/ShortList";
+import CategoryList from "../categoryList/CategoryList";
 import ArticlesByTopicShort from "../articles/ArticlesByTopicShort";
 
 function Home() {
@@ -35,11 +34,11 @@ function Home() {
     .slice(0 ,5)
   const articleTopic2 = 
     data
-    .filter(article => article.topic && article.topic === "football" )
+    .filter(article => article.topic && article.topic === "cooking" )
     .slice(0,5)
   const articleTopic3 = 
     data
-    .filter(article => article.topic && article.topic === "cooking" )
+    .filter(article => article.topic && article.topic === "football" )
     .slice(0,5)
 
   return (
