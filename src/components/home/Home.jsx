@@ -1,43 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./home.css";
-import { getArticles } from "../../api";
+// import { getArticles } from "../../api";
 import CategoryList from "../categoryList/CategoryList";
 import ArticlesByTopicShort from "../articles/ArticlesByTopicShort";
+import { ArticleContext } from "../../ArticleContext";
 
 function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [data, setData] = useState([]);
 
-  useEffect(() => {
-    getArticles()
-      .then((fetchedData) => {
-        setData(fetchedData);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error.response);
-      });
-  }, []);
+  // useEffect(() => {
+  //   getArticles()
+  //     .then((fetchedData) => {
+  //       setData(fetchedData);
+  //       setIsLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.response);
+  //     });
+  // }, []);
+  // if (isLoading) return <p>Loading...</p>;
+  const {articles, loading} = useContext(ArticleContext)
+  if (loading) return <p>Loading...</p>
 
-  if (isLoading) return <p>Loading...</p>;
-
-  const article1 = data[0];
-  const article2 = data[1];
-  const article3 = data[2];
-  const article4 = data[3];
-  const article5 = data[4];
-  const article6 = data[5];
+  const article1 = articles[0] || {};;
+  const article2 = articles[1] || {};;
+  const article3 = articles[2] || {};;
+  const article4 = articles[3] || {};;
+  const article5 = articles[4] || {};;
+  const article6 = articles[5] || {};;
 
   const articleTopic1 = 
-    data
+    articles
     .filter(article => article.topic && article.topic === "coding" )
     .slice(0 ,5)
   const articleTopic2 = 
-    data
+    articles
     .filter(article => article.topic && article.topic === "cooking" )
     .slice(0,5)
   const articleTopic3 = 
-    data
+    articles
     .filter(article => article.topic && article.topic === "football" )
     .slice(0,5)
 
@@ -104,8 +106,6 @@ function Home() {
       <section className="container__shortListByTopic">
       <ArticlesByTopicShort data={articleTopic3}/>
       </section>
-
-
 
     </>
   );
